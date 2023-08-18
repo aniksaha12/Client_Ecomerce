@@ -43,7 +43,7 @@ export default function Navbar() {
             <FavoriteBorderIcon/>
             <div className='cartIcon'>
                 <AddShoppingCartIcon/>
-                <span>0</span>
+             <div className='span'>0</div>  
             </div>
         </div>
         </div>
