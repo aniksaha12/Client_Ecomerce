@@ -1,57 +1,75 @@
 .navbar {
-    height: 80px;
-  
-    .wrapper {
-      padding: 10px 30px;
+  height: 80px;
+  align-items: center;
+  display: flex;
+  background-color: #f1641e !important;
+  width: 100%;
+  .wrapper {
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    width: 100%;
+   
+    .middle {
       display: flex;
+      gap: 10px;
       align-items: center;
+      width: 80%;
       justify-content: space-between;
-  
-      .item {
+      .icons-grps {
         display: flex;
+        gap: 30px;
         align-items: center;
-        font-size: 18px;
-      }
-  
-      .left {
-        display: flex;
-        align-items: center;
-        gap: 25px;
-      }
-      .center {
-        font-size: 30px;
-        letter-spacing: 2px;
-      }
-      .right {
-        display: flex;
-        align-items: center;
-        gap: 25px;
-  
-        .icons {
-          display: flex;
-          gap: 15px;
-          color: #777;
+        flex-direction: row;
+        .sign-in{
+          color: #fff;
+          text-align: center;
+          font-family: roboto;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          width:fit-content;
           cursor: pointer;
-  
-          .cartIcon {
-            position: relative;
-  
-            .span{
-              font-size: 12px;
-              width: 20px;
-              height: 20px;
-              border-radius: 50%;
-              background-color: #2879fe;
-              color: white;
-              position: absolute;
-              right: -10px;
-              top: -10px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            }
+
+          &:hover{
+            text-decoration: underline;
+            text-decoration-color: white;
+            text-decoration-thickness: 2px ;
+            text-underline-offset: 5px;
           }
+        }
+      }
+      .search-container {
+        display: flex;
+        align-items: center;
+        position: relative;
+        background: #eaeaea;
+        box-shadow: 0px 0px 0px 1px rgba(160, 140, 199, 0.16),
+          0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+        border-radius: 12px;
+        width: 500px;
+        .nosubmit {
+          background: transparent;
+          color: black;
+          width: 100%;
+          height: 40px;
+          gap: 8px;
+          padding: 6px 12px;
+          border: none;
+          outline: none;
+        }
+        .search-icon {
+          left: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 18px;
+          height: 18px;
+          padding: 6px 12px;
         }
       }
     }
   }
+}
