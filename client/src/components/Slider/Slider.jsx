@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import EastTwoToneIcon from "@mui/icons-material/EastTwoTone";
-import WestTwoToneIcon from "@mui/icons-material/WestTwoTone";
 import "./Slider.css";
 import banner_oversized_tshirt from "../../asset/website_new_theme_banner_oversized_tshirt_copy.png";
-
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 export default function Slider() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -13,12 +12,7 @@ export default function Slider() {
     "https://images.pexels.com/photos/837140/pexels-photo-837140.jpeg?auto=compress&cs=tinysrgb&w=1600",
   ];
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? 2 : prev - 1));
-  };
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev === 2 ? 0 : prev + 1));
-  };
+
 
   return (
     <div className="slider">
@@ -30,25 +24,23 @@ export default function Slider() {
           alt="oversized_tshirt"
         />
       </div>
-      <div
-        className="container"
-        style={{ transform: `translateX(-${currentSlide * 100}vw)` }}
-       
-      >
-        {data.map((image, index) => (
-          <div className="slide" key={index}  data-aos="fade-right" data-aos-duration="2000">
-            <img src={image} alt="" />
-          </div>
-        ))}
+      <div style={{overflow:'hidden'}}>
+      <Carousel>
+                <div>
+                    <img src="https://images.pexels.com/photos/1549200/pexels-photo-1549200.jpeg?auto=compress&cs=tinysrgb&w=1600"  alt="logo" width="80%"/>
+                    <p className="legend">Legend 1</p>
+                </div>
+                <div>
+                    <img src="https://images.pexels.com/photos/949670/pexels-photo-949670.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="logo" width="80%"/>
+                    <p className="legend">Legend 2</p>
+                </div>
+                <div>
+                    <img src="https://images.pexels.com/photos/837140/pexels-photo-837140.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="logo" width="80%"/>
+                    <p className="legend">Legend 3</p>
+                </div>
+            </Carousel>
       </div>
-      <div className="icons">
-        <div className="icon" onClick={prevSlide}>
-          <WestTwoToneIcon />
-        </div>
-        <div className="icon" onClick={nextSlide}>
-          <EastTwoToneIcon />
-        </div>
-      </div>
+
     </div>
   );
 }

@@ -7,9 +7,9 @@ export default function Home() {
   useEffect(() => {
     AOS.init();
   }, []);
+ 
   return (
     <div className='home'>
-      
       <Slider/>
       <FeaturedProducts type="Featured"/>
       <FeaturedProducts type="Trending"/>
